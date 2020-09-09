@@ -1,0 +1,34 @@
+Initialize a git repository locally:
+Git init
+Git remote add origin <URL>
+Git pull origin master
+git fetch --all
+Switch Branches:
+$ git checkout -b [name_of_your_new_branch] to create branch
+Git checkout <branch name>
+
+Check Status: 
+git status       # if something was changed and it isn't tracking it it will be in red
+
+Check Branches: 
+git branch
+
+In Whatever Branch you are in:
+To upload to remote: DO this everytime
+Git add <file needed>    # this allows you to tell which file you want to start keeping track of
+Git commit -m <Insert a message about what you basically changed and which files you did it to> #puts into the github local repository to start keeping track of your added files 
+OR YOU CAN ALSO
+Git commit  and a message box appears for you to enter
+Git push origin <branch (master, Hayden, yours)> 
+
+Whenever you log on:
+-	Always make sure you are using your branch and everything up to date by pulling from your branch or master
+Git pull origin <branch wanted> 
+
+Security Login Command needed before pushing or pulling:
+ git config --global user.email 
+ git config --global user.name 
+
+Again: make sure  you always push before closing to your branch CHECKOUT TO YOUR BRANCH and pull when starting a new
+
+To remove the last commit from git, you can simply run git reset --hard HEAD^ If you are removing multiple commits from the top, you can run git reset --hard HEAD~2 to remove the last two commits. You can increase the number to remove even more commits.
