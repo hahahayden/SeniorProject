@@ -23,7 +23,7 @@ Git push origin <branch (master, Hayden, yours)>
 
 Whenever you log on:
 -	Always make sure you are using your branch and everything up to date by pulling from your branch or master
-Git pull origin <branch wanted> 
+Important: Git pull origin <branch wanted> 
 
 Security Login Command needed before pushing or pulling:
  git config --global user.email 
