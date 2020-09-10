@@ -6,7 +6,7 @@ git fetch --all
 Switch Branches:
 $ git checkout -b [name_of_your_new_branch] to create branch
 Git checkout <branch name>
-git push origin [name of branch]
+git push origin [name of branch] to create branch
 
 Check Status: 
 git status       # if something was changed and it isn't tracking it it will be in red
