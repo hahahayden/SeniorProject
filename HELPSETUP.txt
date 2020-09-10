@@ -33,3 +33,5 @@ Security Login Command needed before pushing or pulling:
 Again: make sure  you always push before closing to your branch CHECKOUT TO YOUR BRANCH and pull when starting a new
 
 To remove the last commit from git, you can simply run git reset --hard HEAD If you are removing multiple commits from the top, you can run git reset --hard HEAD~2 to remove the last two commits. You can increase the number to remove even more commits.
+
+To grab someone else's working file, be in the local branch and then git checkout [name of the branch file wanted is in] [file name] to have it appear in ur local branch and then push back to remote
