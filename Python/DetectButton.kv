@@ -1,0 +1,14 @@
+DetectButton:
+
+<DetectButton>:
+        text: "Read Pills"              # Label
+        font_size: '32dp'               # Font Size
+        text_size: None, self.height    # Needed to Align text
+        valign: 'bottom'                # Align Text to the bottom of the button
+        color: 0,0,0,1                  # Text Color in RGBA
+
+        background_normal: 'Camera.jpg' # Background Image of Camera Icon
+        # background_down: Fill in with Image of pushed down
+
+        on_press:
+                self.callback()
