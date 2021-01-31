@@ -20,11 +20,33 @@ from kivy.config import Config
 
 from kivy.core.window import Window
 
+class MostRecent(DropDown):
+    def build(self):
+        HistoryScreen.build.layout.add_widget(MostRecent)
+    def callback(self):
+        Homescreen.HomeScreen().run()
+        pass
+    pass
+
+class BackButton(Button):
+    def build(self):
+        HistoryScreen.build.layout.add_widget(BackButton)
+    
 
 
-class History(App):
+class HistoryScreen(App):
+
+    def __init__(self,**kwargs):
+        super(HistoryScreen,self).__init__(**kwargs)
 
     def build(self):
-        layout = PageLayout
-        self.most_recent = Builder.load_file('MostRecent.kv')
+        layout = PageLayout()
+
+        self.MostRecent = Builder.load_file('MostRecent.kv')
+        self.BackButton = Builder.load_file('ReturnButton.kv')
+
+        layout.add_widget(self.MostRecent)
+        layout.add_widget(self.BackButton)
+
+        return layout
     pass

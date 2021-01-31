@@ -1,0 +1,135 @@
+#:kivy 2.0.0
+<PillTankRoot>:
+        manager: screen_manager
+        ScreenManager:
+                id: screen_manager
+                HomeScreen:
+                        id: HomeScreen
+                        name: "HomeScreen"
+                        manager: screen_manager
+                History:
+                        id: History
+                        name: "History"
+                        manager: screen_manager
+                Profile:
+                        id: Profile
+                        name: "Profile"
+                        manager: screen_manager
+                SettingsScreen:
+                        id: SettingsScreen
+                        name: "SettingsScreen"
+                        maanger: screen_manager      
+<HomeScreen@Screen>:
+        GridLayout:
+                orientation: 'lr-tb'
+                cols: 2
+                rows: 2
+                padding: root.width * .02, root.height * .02
+                spacing: min(root.width, root.height) * .02
+                Button: #Detect Image Button
+                        text: "Read Pills"              # Label
+                        font_size: '32dp'               # Font Size
+                        text_size: None, self.height    # Needed to Align text
+                        valign: 'bottom'                # Align Text to the bottom of the button
+                        color: 0,0,0,1                  # Text Color in RGBA
+
+                        background_normal: 'Camera.jpg' # Background Image of Camera Icon
+                        # background_down: Fill in with Image of pushed down
+                        on_release: app.root.launch()
+
+                Button: #History Button
+                        text: "History"                 # Label
+                        font_size: '32dp'               # Font Size
+                        text_size: None, self.height    # Needed to Align text
+                        valign: 'bottom'                # Align Text to the bottom of the button
+                        color: 0,0,0,1                  # Text Color in RGBA
+
+                        # Button Image
+                        background_normal: 'recent.png'
+                        # background_down: Button pushed image
+                        on_release:
+                                app.root.changeScreen(self.text)
+                                app.root.manager.transition.direction = 'left'
+
+                Button: #Profile Button
+                        text: "Profile"                 # Label
+                        font_size: '32dp'               # Font Size
+                        text_size: None, self.height    # Needed to Align text
+                        valign: 'bottom'                # Align Text to the bottom of the button
+                        color: 0,0,0,1                  # Text Color in RGBA
+                        background_normal: 'profile.png'
+                        # background_down: Button pushed image
+                        on_release: 
+                                app.root.changeScreen(self.text)
+                                app.root.manager.transition.direction = 'left'
+
+                Button: #Settings Button
+                        text: "SettingsScreen"                 # Label
+                        font_size: '32dp'               # Font Size
+                        text_size: None, self.height    # Needed to Align text
+                        valign: 'bottom'                # Align Text to the bottom of the button
+                        color: 0,0,0,1                  # Text Color in RGBA
+                        background_normal: 'settings.png'
+                        # background_down: Button pushed image
+                        on_release:
+                                app.root.changeScreen(self.text)
+                                app.root.manager.transition.direction = 'left'
+        
+<History@Screen>:
+        BoxLayout:
+                orientation: 'vertical'
+                padding: root.width * .02, root.height * .02
+                spacing: min(root.width, root.height) * .02
+                Button: 
+        ActionBar:
+                pos_hint: {'top': 1}
+                ActionView:
+                        use_separator: True
+                        ActionPrevious:
+                                with_previous: False
+                        ActionButton:
+                                icon: 'BackButton.jpg'
+                                on_release: 
+                                        app.root.changeScreen('HomeScreen')
+                                        app.root.manager.transition.direction = 'right'
+<Profile@Screen>:
+        BoxLayout:
+                orientation: 'vertical'
+                padding: root.width * .02, root.height * .02
+                spacing: min(root.width, root.height) * .02
+        ActionBar:
+                pos_hint: {'top': 1}
+                ActionView:
+                        use_separator: True
+                        ActionPrevious:
+                                with_previous: False
+                        ActionButton:
+                                icon: 'BackButton.jpg'
+                                on_release: 
+                                        app.root.changeScreen('HomeScreen')
+                                        app.root.manager.transition.direction = 'right'
+
+<SettingsScreen@Screen>:
+        BoxLayout:
+                orientation: 'vertical'
+                padding: root.width * .02, root.height * .02
+                spacing: min(root.width, root.height) * .02
+        ActionBar:
+                pos_hint: {'top': 1}
+                ActionView:
+                        use_separator: True
+                        ActionPrevious:
+                                with_previous: False
+                        ActionButton:
+                                icon: 'BackButton.jpg'
+                                on_release: 
+                                        app.root.changeScreen('HomeScreen')
+                                        app.root.manager.transition.direction = 'right'
+                        ActionOverflow:
+                                ActionButton:
+                                        size: self.size
+                                        text: "Advanced GUI Settings"
+                                        on_press: app.open_settings()
+
+<
+                                

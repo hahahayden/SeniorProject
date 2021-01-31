@@ -1,0 +1,15 @@
+<ReturnButton@Button>:
+        text: 'Return'
+        pos_hint: {'center_x':0.5, 'y':0}
+        size_hint: None, None
+        size: self.texture_size
+        ActionBar:
+                pos_hint: {'top':1}
+                ActionPrevious:
+                ActionView:
+                        ActionButton:
+                                text: "Button"
+        on_press:
+                screen_manager.transition.direction = 'left'
+                screen_manager.transition.duration = 0.5
+                screen_manager.current = 'HomeScreen'
