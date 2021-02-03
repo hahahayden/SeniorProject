@@ -21,13 +21,13 @@ from kivy.lang import Builder
 
 from kivy.config import Config
 
-# from kivy.core.window import Window
+from kivy.core.window import Window
 
 # Setting app size (Pi Touchscreen uses 800x480)
-# Config.set('graphics', 'width', '1920')
-# Config.set('graphics', 'height', '1080')
+Config.set('graphics', 'width', '1920')
+Config.set('graphics', 'height', '1080')
 Builder.load_file('PillTankRoot.kv')
-# Window.fullscreen = False
+Window.fullscreen = True
 
 # class DetectButton(Button):
 #     def build(self):
