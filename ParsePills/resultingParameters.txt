@@ -1,0 +1,5 @@
+PillHistory
+
+Pill Found In Database Line:  28  PillDescription:   "24 HR Propranolol Hydrochloride 80 MG Extended Release Oral Capsule"  Pill Imprint:  "R;2779;R;2779"  
+Pill Found In Database Line:  69  PillDescription:   "24 HR Diltiazem Hydrochloride 300 MG Extended Release Oral Capsule"  Pill Imprint:  "R;2579;R;2579"  
+Pill Found In Database Line:  97  PillDescription:   "Fluoxetine 40 MG Oral Capsule"  Pill Imprint:  "MYLAN;4350;MYLAN;4350"  
