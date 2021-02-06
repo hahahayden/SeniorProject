@@ -1,0 +1,52 @@
+<History@Screen>:
+        BoxLayout:
+                size_hint: 1, 0.8
+        BoxLayout:
+                size_hint: 1, 0.2
+        
+        Button:
+                on_release:
+                    
+                        app.root.print_data(self.input_data)
+        RecycleView:
+              
+                viewclass: 'Button'  # defines the viewtype for the data items. 
+                orientation: "vertical"
+                spacing: 40
+                padding:10, 10
+                space_x: self.size[0]/3
+        
+        RecycleBoxLayout: 
+                color:(0, 0.7, 0.4, 0.8) 
+                default_size: None, dp(56) 
+
+                # defines the size of the widget in reference to width and height 
+                default_size_hint: 0.4, None 
+                size_hint_y: None
+                height: self.minimum_height 
+                orientation: 'vertical' # defines the orientation of data items 
+       
+                
+        
+        ActionBar:
+                pos_hint: {'top': 1}
+                ActionView:
+                        use_separator: True
+                        ActionPrevious:
+                                with_previous: False
+                        ActionButton:
+                                icon: 'BackButton.jpg'
+                                on_release: 
+                                        app.root.changeScreen('HomeScreen')
+                                        app.root.manager.transition.direction = 'right'
+        ActionBar:
+                pos_hint: {'bottom': 1}
+                ActionView:
+                        use_separator: True
+                        ActionPrevious:
+                                with_previous: False
+                        ActionButton:
+                                icon: 'PowerButton.png'
+                                on_release: 
+                                        app.root.power()
+                  
