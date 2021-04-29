@@ -1,0 +1,15 @@
+CC=gcc
+TARGET=KristFlashMem.o
+SOURCES= KristFlashMem.c
+OBJECT  = $(SOURCES:.cpp=.o)
+
+all: $(TARGET)
+
+$(TARGET): $(OBJECT)
+	$(CC) -o $(TARGET) $(OBJECT) $(CFLAGS) $(LDFLAGS)
+
+$(OBJECT): $(SOURCES)
+	$(CC) -c  $(SOURCES) $(CFLAGS) $(LDFLAGS)
+
+clean:
+	rm -f $(TARGET) $(OBJECT)

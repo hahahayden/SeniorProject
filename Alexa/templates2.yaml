@@ -1,0 +1,10 @@
+<speak>
+
+  {{title}} <break time ="0.5s"/>
+  
+  {% for eachLine in lin %}
+   
+    Pill Number {{loop.index}} is {{eachLine}}
+    <break time ="0.23s"/>
+  {% endfor %}
+</speak>
